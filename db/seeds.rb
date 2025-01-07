@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+10.times do |i|
+  name = Faker::Restaurant.name
+  address = Faker::Address.full_address
+  phone = Faker::PhoneNumber.phone_number
+  category = ["chinese", "italian", "japanese", "french", "belgian"].sample
+
+  Restaurant.create!(
+    name: name,
+    address: address,
+    phone_number: phone,
+    category: category
+  )
+  puts "Seeds completed!"
+end
