@@ -1,0 +1,12 @@
+<h1>Yelp</h1>
+<h2>Post a review</h2>
+<p>Restaurant: <%= @restaurant.name %></p>
+<div>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection:[0, 1, 2, 3, 4, 5] %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%= link_to "Back to Restaurants List", restaurants_path, class: "btn btn-primary"%>
